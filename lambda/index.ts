@@ -11,6 +11,7 @@ export const handler: APIGatewayProxyHandler = async (event, _context) => {
       message: 'Go Serverless Webpack (Typescript) v1.0! Your function executed successfully!',
       input: event,
       uuid: uuid,
+      env: process.env,
     }, null, 2),
   };
 }

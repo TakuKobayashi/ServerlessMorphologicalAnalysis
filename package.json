@@ -9,6 +9,8 @@
     "swagger:build": "redoc-cli bundle swagger.yml -o docs/index.html"
   },
   "dependencies": {
+    "dotenv": "^8.1.0",
+    "serverless-dotenv-plugin": "^2.1.1",
     "source-map-support": "^0.5.10",
     "uuid": "^3.3.3"
   },
