@@ -15,9 +15,22 @@ provider:
 functions:
   text-analysis:
     handler: lambda/index.handler
-    memorySize: 192
+    memorySize: 128
     timeout: 900
     events:
       - http:
           method: get
           path: morphologic/parse
+  event-sample:
+    handler: lambda/event.handler
+    memorySize: 128
+    timeout: 900
+    events:
+      - schedule:
+          rate: rate(2 minutes)
+          enabled: true
+          input:
+            key1: value1
+            key2: value2
+            stageParams:
+              stage: dev
